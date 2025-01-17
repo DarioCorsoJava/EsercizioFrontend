@@ -1,1 +1,23 @@
-<p>login works!</p>
+<div class="container form-container">
+  <div class="row">
+    <h1 style="text-align: center;"> Login </h1>
+  </div>
+  <div class="container">
+    <form #f="ngForm" name="registrationForm">
+      <div class="row-item">
+        <input type="text" pInputText placeholder="Email" name="email" ngModel required="true">
+      </div>
+      <div class="row-item">
+        <p-password placeholder="Password" toggleMask="true" name="password" ngModel required="true"/>
+      </div>
+      <div class="row-item">
+        <button class="btn btn-primary" (click)="onSubmit(f.value)"> Login </button>
+      </div>
+    </form>
+  </div>
+  <div class="container">
+    <div class="row-item">
+      Non sei registrato? <button class="btn btn-primary" (click)="onSignupClick()"> Registrati</button>
+    </div>
+  </div>
+</div>

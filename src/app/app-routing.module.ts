@@ -6,11 +6,10 @@ import { HomeComponent } from './components/home/home.component';
 import { RegistrationComponent } from './components/user/registration/registration.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'home', pathMatch: 'full', component: HomeComponent},
-  {path: '**', redirectTo: 'home', pathMatch: 'full', component: HomeComponent},
-  {path: 'home', redirectTo: 'home', component: HomeComponent},
-  {path: 'login', redirectTo: 'login', component: LoginComponent},
-  {path: 'registration', redirectTo: 'registration', component: RegistrationComponent}];
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: 'home', component: HomeComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'registration', component: RegistrationComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'})],

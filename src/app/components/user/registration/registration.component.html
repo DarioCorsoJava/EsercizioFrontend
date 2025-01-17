@@ -1,1 +1,42 @@
-<p>registration works!</p>
+<div class="container form-container">
+  <div class="row">
+    <h1 style="text-align: center;"> Registrazione </h1>
+  </div>
+    <div class="container">
+      <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+        <div class="row-item">
+          <input type="text" pInputText placeholder="Nome" class="form-control" formControlName="name">
+        </div>
+        <div class="row-item">
+          <input type="text" pInputText placeholder="Cognome" class="form-control" formControlName="surname">
+        </div>
+        <div class="row-item">
+          <input type="text" pInputText placeholder="Email" class="form-control" formControlName="email">
+        </div>
+        <div class="row-item">
+          <input type="password" pInputText placeholder="Password" class="form-control" formControlName="password">
+        </div>
+        <div class="row-item">
+          <input type="password" pInputText placeholder="Conferma Password" class="form-control" formControlName="confirmPassword">
+        </div>
+        <div class="row-item">
+          <input type="radio" id="radio-maschio" name="sex" value="Maschio" class="form-control" formControlName="sex">
+          <label for="radio-maschio"> Maschio </label>
+
+          <input type="radio" id="radio-femmina" name="sex" value="Femmina" class="form-control" formControlName="sex">
+          <label for="radio-femmina"> Femmina </label>
+        </div>
+        <div class="row-item">
+          <input type="checkbox" formControlName="termsOfService"> Aderisco ai Termini di Servizio
+        </div>
+        <div class="row-item">
+          <button type="submit" [disabled]="!this.registrationForm.valid" class="btn btn-primary"> Registrati </button>
+        </div>
+      </form>
+    </div>
+    <div class="container">
+      <div class="row-item">
+        Sei già registrato? <button class="btn btn-primary" (click)="onLoginClick()"> Login </button>
+      </div>
+    </div>
+</div>
